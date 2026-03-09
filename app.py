@@ -233,9 +233,30 @@ if st.button("Calcular Financiamento"):
         st.metric(
             "Taxa média de mercado",
             f"{tx_media_mercado:.2%}"
-    )
+        )
+
+    # diferença entre as taxas
+    excesso = taxa_efetiva - tx_media_mercado
+
+    st.divider()
+
+    if excesso <= 0:
+        st.success(
+            "A taxa do contrato está igual ou abaixo da taxa média de mercado."
+        )
+
+    elif excesso <= 0.3 * tx_media_mercado:
+        st.warning(
+            f"A taxa do contrato está {excesso:.2%} acima da média de mercado. "
+            "Pode haver indício de cobrança elevada, mas normalmente não caracteriza abuso."
+        )
+
+    else:
+        st.error(
+            f"A taxa do contrato está {excesso:.2%} acima da média de mercado. "
+            "Diferenças muito elevadas podem indicar possível abusividade e justificar análise jurídica para revisão do financiamento."
+        )
         
-     
     
     st.subheader('Metodologia')
     
