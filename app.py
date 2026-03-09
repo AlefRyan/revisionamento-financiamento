@@ -91,7 +91,7 @@ data_contrato = st.date_input("Data do contrato", format='DD/MM/YYYY')
 
 
 dados = pd.read_csv(
-    r'dados\STP-20260307161154673.csv',
+    r'dados/STP-20260307161154673.csv',
     sep=';',
     decimal=','
 )
