@@ -132,9 +132,8 @@ if st.button("Calcular Financiamento"):
     if taxa_efetiva > 1.5 * tx_media_mercado:
         st.warning(
             f"""A taxa do contrato ({taxa_efetiva:.2%}) é superior à taxa média de mercado ({tx_media_mercado:.2%}), 
-        sendo cerca de {(taxa_efetiva/tx_media_mercado):.2f} vezes maior. 
-
-        Diferenças muito elevadas podem indicar possível abusividade e justificar análise jurídica para revisão do financiamento."""
+        sendo cerca de {(taxa_efetiva/tx_media_mercado):.2f} vezes maior. Diferenças muito elevadas podem indicar possível 
+        abusividade e justificar análise jurídica para revisão do financiamento."""
         )
             
         
