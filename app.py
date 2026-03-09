@@ -126,7 +126,9 @@ if st.button("Calcular Financiamento"):
     taxa_contrato = taxa_contrato / 100
 
     if round(taxa_contrato, 3) != round(taxa_efetiva, 3):
-        st.warning('A taxa do contrato não corresponde a taxa efetiva calculada')
+        st.warning(
+    f"""A taxa informada no contrato ({taxa_contrato:.2%}) não corresponde à taxa efetiva calculada ({taxa_efetiva:.2%})."""
+        )
     
  
     if taxa_efetiva > 1.5 * tx_media_mercado:
