@@ -228,7 +228,7 @@ if st.button("Calcular Financiamento"):
 
     with col1:
         st.metric(
-            "Taxa do contrato",
+            "Taxa efetiva",
             f"{taxa_efetiva:.2%}"
         )
 
