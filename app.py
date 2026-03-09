@@ -235,7 +235,7 @@ if st.button("Calcular Financiamento"):
             f"{tx_media_mercado:.2%}"
         )
 
-    # diferença entre as taxas
+    # diferença entre as taxas (em pontos percentuais)
     excesso = taxa_efetiva - tx_media_mercado
 
     st.divider()
@@ -245,15 +245,15 @@ if st.button("Calcular Financiamento"):
             "A taxa do contrato está igual ou abaixo da taxa média de mercado."
         )
 
-    elif excesso <= 0.3 * tx_media_mercado:
+    elif excesso <= 0.5 * tx_media_mercado:
         st.warning(
-            f"A taxa do contrato está {excesso:.2%} acima da média de mercado. "
-            "Pode haver indício de cobrança elevada, mas normalmente não caracteriza abuso."
+            f"A taxa do contrato está {excesso:.2%} pontos percentuais acima da taxa média de mercado. "
+            "Pode haver indício de cobrança elevada, mas normalmente não caracteriza abusividade."
         )
 
     else:
         st.error(
-            f"A taxa do contrato está {excesso:.2%} acima da média de mercado. "
+            f"A taxa do contrato está {excesso:.2%} pontos percentuais acima da taxa média de mercado. "
             "Diferenças muito elevadas podem indicar possível abusividade e justificar análise jurídica para revisão do financiamento."
         )
         
